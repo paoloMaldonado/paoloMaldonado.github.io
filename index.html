@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paolo Maldonado</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <!-- boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/753d0c31eb.js" crossorigin="anonymous"></script>
+    <!-- custom css styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- scripts -->
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#portfolio").load("/html/portfolio.html");
+        });
+    </script>
+</head>
+
+<body>
+    <main class="my-5">
+        <!-- start header -->
+        <div class="container" id="header-start">
+            <div class="header mx-auto text-center">
+                <img src="https://picsum.photos/200" class="rounded-circle mt-2" alt="image">
+                <h1 class="mt-4 mb-0">Paolo Maldonado</h1>
+                <p class="description fw-light">"This is a lead paragraph. It stands out from regular paragraphs"</p>
+
+                <ul class="list-inline mt-4">
+                    <li class="list-inline-item">
+                        <a href="mailto:jorpal_10_20@outlook.com" title="Email" class="x1">
+                            <span style="color: SteelBlue;">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://github.com/paoloMaldonado" target="_blank" title="GitHub" class="x1">
+                            <span style="color: SteelBlue;">
+                                <i class="fa-brands fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://linkedin.com" target="_blank" title="Linkedin" class="x1">
+                            <span style="color: SteelBlue;">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- end header -->
+
+        <!-- start body -->
+        <div id="portfolio"></div>
+        <!-- end body -->
+
+    </main>
+
+    <!-- start footer -->
+    <footer class="footer mt-auto py-1 mt-3 bg-light">
+        <div class="container text-center">
+            <span class="footer-text text-muted fw-light">
+                Made with &heartsuit; by Paolo Maldonado
+                <!-- <script>document.write(new Date().getFullYear());</script> -->
+            </span>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <!-- boostrap javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

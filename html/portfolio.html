@@ -1,0 +1,30 @@
+<script>
+    $(function () {
+        $("#profile-content").load("/html/about.html");
+        $("#projects-content").load("/html/projects.html");
+    });
+</script>
+
+<div class="container">
+    <div class="row mx-5 mt-4">
+        <!-- nav tabs -->
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="#projects-content" id="projects-tab" data-bs-toggle="tab"
+                    aria-expanded="true" role="tab">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#profile-content" id="profile-tab" data-bs-toggle="tab" aria-expanded="true"
+                    role="tab">About</a>
+            </li>
+        </ul>
+        <!-- end nav tabs -->
+
+        <div class="tab-content">
+            <!-- projects section -->
+            <div class="tab-pane fade show active" id="projects-content"></div>
+            <!-- about section -->
+            <div class="tab-pane fade" id="profile-content"></div>
+        </div>
+    </div>
+</div>

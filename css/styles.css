@@ -1,0 +1,71 @@
+/* styles css */
+
+/* fontawesome */
+.fa-envelope:hover {
+    color: rgb(42, 74, 101);
+}
+
+.fa-github:hover {
+    color: rgb(42, 74, 101);
+}
+
+.fa-linkedin:hover {
+    color: rgb(42, 74, 101);
+}
+
+.description {
+    font-size: 18px;
+}
+
+/* nav tabs */
+.nav>li>a.active,
+.nav>li a.active>:focus,
+.nav>li>a.active:hover,
+.nav>li>a:hover {
+    border: none;
+    background-color: SteelBlue;
+    color: #fff;
+}
+
+.nav>li a {
+    display: inline-block;
+    background-color: #f5f4f5;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    color: #000;
+    padding: 5px 30px;
+    margin: 5px;
+}
+
+/* projects thumbnails */
+/* thumbnail paragraph */
+.thumbnail>div>p {
+    font-size: 12px;
+    color: #7b7d7d;
+}
+
+/* thumbnail links */
+.thumbnail>div>h6>a,
+.thumbnail>div>p>a {
+    text-decoration: none;
+    color: SteelBlue;
+}
+
+.thumbnail>div>h6>a:hover, 
+.thumbnail>div>p>a:hover {
+    text-decoration: underline;
+    color: rgb(42, 74, 101);
+}
+
+h1 {
+    font-family: 'Times New Roman';
+}
+
+.header>p {
+    font-family: Raleway;
+}
+
+.footer-text {
+    font-size: 13px;
+}
