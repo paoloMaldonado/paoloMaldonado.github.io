@@ -1,0 +1,13 @@
+{% if include.languages != empty %}
+  {% for category in include.languages %}
+    {% assign no_comma = forloop.last %}
+    {{ category | escape }}{% unless no_comma %} {% endunless %}
+  {% endfor %}
+{% endif %}
+
+{% if include.kind != empty %} •
+  {% for category in include.kind %}
+    {% assign no_comma = forloop.last %}
+    {{ category | escape }}{% unless no_comma %} {% endunless %}
+  {% endfor %}
+{% endif %}

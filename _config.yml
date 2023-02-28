@@ -31,6 +31,9 @@ exclude:
   - screenshot.png
   - vendor
 
+gems:
+  - jekyll-paginate-v2
+
 # Social media
 twitter_username:
 twitter_image:
@@ -50,9 +53,22 @@ markdown: kramdown
 excerpt_separator: "<!-- more -->"
 
 # Outputting
-permalink: /:year/:month/:day/:title/
-paginate_path: /posts/:num/
-paginate: 5
+permalink: /:year/:month/:title.html
+# paginate_path: /posts/:num/
+# paginate: 5
+pagination:
+  enabled: true
+  per_page: 3
+  permalink: '/:num/'
+  title: ' - :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title.html
 
 # Markdown settings
 kramdown:

@@ -3,7 +3,9 @@
 main:
   - title: "About"
     url: /about/
+  - title: "Projects"
+    url: /projects/
   - title: "Archives"
     url: /archives/
   - title: "GitHub"
-    url: https://github.com/yous/whiteglass
+    url: https://github.com/paoloMaldonado
