@@ -3,7 +3,7 @@ layout: project
 title: Hello pagination again
 repository: http://example.com
 document: myDoc
-categories: CUDA, C++, OpenGL
+tools: CUDA, C++, OpenGL
 kind: Personal project
 ---
 

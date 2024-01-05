@@ -31,8 +31,8 @@ layout: default
             {% if post.document %}   
               <a href="{{post.document}}">PDF</a> •
             {% endif %}
-            {% if post.categories != empty or post.tags != empty %}
-              {% include project_links.html languages=post.categories kind=post.kind %}
+            {% if post.tools != empty or post.tags != empty %}
+              {% include project_links.html languages=post.tools kind=post.kind %}
             {% endif %}
           </p>
         </header>

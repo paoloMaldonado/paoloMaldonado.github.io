@@ -17,8 +17,8 @@ layout: default
         {% if page.document %}   
           <a href="{{page.document}}">PDF</a> •
         {% endif %}
-        {% if page.categories != empty or page.tags != empty %}
-          {% include project_links.html languages=page.categories kind=page.kind %}
+        {% if page.tools != empty or page.tags != empty %}
+          {% include project_links.html languages=page.tools kind=page.kind %}
         {% endif %}
     </p>
   </header>
