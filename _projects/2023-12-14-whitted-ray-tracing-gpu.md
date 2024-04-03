@@ -6,9 +6,9 @@ tools: CUDA, C++, OpenGL
 kind: Undergraduate Thesis
 ---
 
-![Imgur](../images/projects/ray-tracing/ray-tracing-gpu@4x-8.png)
+![Imgur](../images/projects/ray-tracing-gpu/ray-tracing-gpu@4x-8.png)
 
-I implemented ray tracing entirely on a GPU based on Whitted's algorithm, with the goal of rendering fully ray-traced scenes in real-time settings through a user interface. This project served as my undergraduate thesis. The implementation covers ray tracing for perfect light reflection and refraction, as outlined in the original paper. The algorithm is capable of reproducing light effects such as mirror reflection and diffuse reflection. Additionally, I implemented five Physically Based Rendering (PBR) materials using a design pattern based on the [PBRT book](https://pbrt.org/). The implementation also includes linear transformations, scene loading, and real-time configuration. Users can explore and experiment with scenes, adjusting settings such as the number of bounces, light, and camera position. 
+I implemented ray tracing entirely on a GPU based on Whitted's algorithm, with the goal of rendering fully ray-traced scenes in real-time settings through a user interface. This project served as my undergraduate thesis. The implementation covers ray tracing for perfect light reflection and refraction, as outlined in the [original paper](https://www.cs.drexel.edu/~deb39/Classes/Papers/p343-whitted.pdf). The algorithm is capable of reproducing light effects such as mirror reflection and diffuse reflection. Additionally, I implemented five Physically Based Rendering (PBR) materials using a design pattern based on the [PBRT book](https://pbrt.org/). The implementation also includes linear transformations, scene loading, and real-time configuration. Users can explore and experiment with scenes, adjusting settings such as the number of bounces, light, and camera position. 
 
 <!-- more -->
 
@@ -46,7 +46,7 @@ The materials I implemented are listed in the table below, which also includes t
 BxDFs:
 
 | BxDF                             | Class name             |
-| -------------------------------- | ---------------------- |
+| -------------------------------- | -----------------------|
 | Lambertian\*                     | _LambertianReflection_ |
 | Phong\*                          | _PhongReflection_      |
 | Blinn-Phong\*                    | _BlinnPhongReflection_ |
@@ -70,7 +70,8 @@ Some quantifiable results are listed in the table below. I used various variatio
 | Scene name          | Resolution | FPS  | Miliseconds (ms) |
 | ------------------- | ---------- | ---- | ---------------- |
 | CornellBox-Original | 1024x576   | 80.3 | 12.45            |
-| CornellBox-Sphere   | 1024x576   | 3.1  |                  |
+| CornellBox-Sphere   | 1024x576   | 3.1  | 321.101          |
+
 
 
 
