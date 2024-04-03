@@ -20,6 +20,8 @@ I added six new functionalities to the current template. Here, I will list the s
 
 The original template consists of a continuous periodic signal plot. To the right, there is a layout with wheels that allow the modification of the amplitude and the frequency of the plot, as well as a wheel that allows changing the interval length. I added a new vertical layout (QVBoxLayout) to the right of the existing one. This new layout consists of 3 buttons (QPushButton), one checkbox (QCheckBox), and one wheel. In the image below, I show the original program as it comes with the template, and the "extended" version with the new layout:
 
+![Imgur](../images/projects/qt_oscilloscope/comparison-oscillosocpe.png)
+
 Below is how I created this new layout and added the buttons to it:
 
 {% highlight cpp %}
