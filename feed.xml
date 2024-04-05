@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <generator uri="http://jekyllrb.com" version="4.3.3">Jekyll</generator>
+  
+  
+  <link href="https://paolomaldonado.github.io/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://paolomaldonado.github.io/" rel="alternate" type="text/html" hreflang="en" />
+  <updated>2024-04-05T21:26:50+00:00</updated>
+  <id>https://paolomaldonado.github.io//</id>
+
+  
+    <title type="html">Paolo Maldonado’s blog</title>
+  
+
+  
+    <subtitle>Blog and Portfolio</subtitle>
+  
+
+  
+    <author>
+        <name>Paolo Maldonado</name>
+      
+      
+    </author>
+  
+
+  
+  
+    <entry>
+      
+      <title type="html">Nothing here yet</title>
+      
+      
+      <link href="https://paolomaldonado.github.io/2024/04/hello-world.html" rel="alternate" type="text/html" title="Nothing here yet" />
+      
+      <published>2024-04-03T00:00:00+00:00</published>
+      <updated>2024-04-03T00:00:00+00:00</updated>
+      <id>https://paolomaldonado.github.io/2024/04/hello-world</id>
+      <content type="html" xml:base="https://paolomaldonado.github.io/2024/04/hello-world.html">&lt;p&gt;Check the projects section :)&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+        <author>
+            <name>Paolo Maldonado</name>
+          
+          
+        </author>
+      
+
+      
+        <category term="test" />
+      
+
+      
+
+      
+        <summary type="html">Check the projects section :)</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+</feed>

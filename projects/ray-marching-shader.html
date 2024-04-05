@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Reflections with ray marching</title>
+  <meta name="description" content="A Cornell Box made entirely with GLSL (The OpenGL Shading Language) using the raymarching algorithm, specifically, the sphere tracing technique. The Cornell Box is a scene used for testing the quality of renderers, now it is also part of the graphics lore. This is a Glossy-recreated Cornell Box rendered entirely with raymarching. The surfaces are assumed to be glossy (perfectly reflective like a mirror) and the reflections are set up for 2 ray bounces by default. Also, the bounces can be modified in the code but be aware that more bounces mean less perfomance (fps). I wanted to create this with the objective of imitating the effects that a regular raytracing does but with raymarching. Currently, the program runs in realtime (&amp;gt;30fps) in a 800x450 resolution, try going fullscreen here!. Disclaimer: This is not how a rendering algorithm should work, specially offline renderers that use ray tracing/path tracing but this was a fun project to do and I guess there still exists room for more optimization.">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://paolomaldonado.github.io/projects/ray-marching-shader.html">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Paolo Maldonado&#39;s blog" href="https://paolomaldonado.github.io/feed.xml">
+
+  
+
+  
+  <meta property="og:title" content="Reflections with ray marching">
+  <meta property="og:site_name" content="Paolo Maldonado&#39;s blog">
+  <meta property="og:url" content="https://paolomaldonado.github.io/projects/ray-marching-shader.html">
+  <meta property="og:description" content="A Cornell Box made entirely with GLSL (The OpenGL Shading Language) using the raymarching algorithm, specifically, the sphere tracing technique. The Cornell Box is a scene used for testing the quality of renderers, now it is also part of the graphics lore. This is a Glossy-recreated Cornell Box rendered entirely with raymarching. The surfaces are assumed to be glossy (perfectly reflective like a mirror) and the reflections are set up for 2 ray bounces by default. Also, the bounces can be modified in the code but be aware that more bounces mean less perfomance (fps). I wanted to create this with the objective of imitating the effects that a regular raytracing does but with raymarching. Currently, the program runs in realtime (&amp;gt;30fps) in a 800x450 resolution, try going fullscreen here!. Disclaimer: This is not how a rendering algorithm should work, specially offline renderers that use ray tracing/path tracing but this was a fun project to do and I guess there still exists room for more optimization.">
+  
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="Reflections with ray marching">
+  <meta name="twitter:description" content="A Cornell Box made entirely with GLSL (The OpenGL Shading Language) using the raymarching algorithm, specifically, the sphere tracing technique. The Cornell Box is a scene used for testing the qual...">
+  
+  
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Paolo Maldonado&#39;s blog</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">About</a>
+      
+        
+        <a class="page-link" href="/projects/">Projects</a>
+      
+        
+        <a class="page-link" href="/archives/">Archives</a>
+      
+        
+        <a class="page-link" href="https://github.com/paoloMaldonado">GitHub</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">Reflections with ray marching</h1>
+    
+    <p class="post-meta">
+        <!--  to include date -->
+           
+          <a href="https://www.shadertoy.com/view/DdfSWB">Code</a> • 
+        
+        
+        
+          
+  
+    
+    GLSL, shadertoy
+  
+
+
+ •
+  
+    
+    Personal project
+  
+
+
+        
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="../images/projects/ray_marching_shader/raymarching.png" alt="Imgur" /></p>
+
+<p>A Cornell Box made entirely with GLSL (The OpenGL Shading Language) using the raymarching algorithm, specifically, the sphere tracing technique. The Cornell Box is a scene used for testing the quality of renderers, now it is also part of the graphics lore. This is a Glossy-recreated Cornell Box rendered entirely with raymarching. The surfaces are assumed to be glossy (perfectly reflective like a mirror) and the reflections are set up for 2 ray bounces by default. Also, the bounces can be modified in the code but be aware that more bounces mean less perfomance (fps). I wanted to create this with the objective of imitating the effects that a regular raytracing does but with raymarching. Currently, the program runs in realtime (&gt;30fps) in a 800x450 resolution, try going fullscreen <a href="https://www.shadertoy.com/view/DdfSWB">here</a>!.</p>
+
+<p>Disclaimer: This is not how a rendering algorithm should work, specially offline renderers that use ray tracing/path tracing but this was a fun project to do and I guess there still exists room for more optimization.</p>
+
+  </div>
+
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy; 2024 Paolo Maldonado 
+<!-- - Subscribe via <a href="https://paolomaldonado.github.io/feed.xml">RSS</a> -->
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

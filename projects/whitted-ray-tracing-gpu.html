@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Whitted ray tracing using GPU acceleration</title>
+  <meta name="description" content="I implemented ray tracing entirely on a GPU based on Whitted’s algorithm, with the goal of rendering fully ray-traced scenes in real-time settings through a user interface. This project served as my undergraduate thesis. The implementation covers ray tracing for perfect light reflection and refraction, as outlined in the original paper. The algorithm is capable of reproducing light effects such as mirror reflection and diffuse reflection. Additionally, I implemented five Physically Based Rendering (PBR) materials using a design pattern based on the PBRT book. The implementation also includes linear transformations, scene loading, and real-time configuration. Users can explore and experiment with scenes, adjusting settings such as the number of bounces, light, and camera position.">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://paolomaldonado.github.io/projects/whitted-ray-tracing-gpu.html">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Paolo Maldonado&#39;s blog" href="https://paolomaldonado.github.io/feed.xml">
+
+  
+
+  
+  <meta property="og:title" content="Whitted ray tracing using GPU acceleration">
+  <meta property="og:site_name" content="Paolo Maldonado&#39;s blog">
+  <meta property="og:url" content="https://paolomaldonado.github.io/projects/whitted-ray-tracing-gpu.html">
+  <meta property="og:description" content="I implemented ray tracing entirely on a GPU based on Whitted’s algorithm, with the goal of rendering fully ray-traced scenes in real-time settings through a user interface. This project served as my undergraduate thesis. The implementation covers ray tracing for perfect light reflection and refraction, as outlined in the original paper. The algorithm is capable of reproducing light effects such as mirror reflection and diffuse reflection. Additionally, I implemented five Physically Based Rendering (PBR) materials using a design pattern based on the PBRT book. The implementation also includes linear transformations, scene loading, and real-time configuration. Users can explore and experiment with scenes, adjusting settings such as the number of bounces, light, and camera position.">
+  
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="Whitted ray tracing using GPU acceleration">
+  <meta name="twitter:description" content="I implemented ray tracing entirely on a GPU based on Whitted’s algorithm, with the goal of rendering fully ray-traced scenes in real-time settings through a user interface. This project served as m...">
+  
+  
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Paolo Maldonado&#39;s blog</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">About</a>
+      
+        
+        <a class="page-link" href="/projects/">Projects</a>
+      
+        
+        <a class="page-link" href="/archives/">Archives</a>
+      
+        
+        <a class="page-link" href="https://github.com/paoloMaldonado">GitHub</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">Whitted ray tracing using GPU acceleration</h1>
+    
+    <p class="post-meta">
+        <!--  to include date -->
+           
+          <a href="https://github.com/paoloMaldonado/RayTracing_gpu">Code</a> • 
+        
+        
+        
+          
+  
+    
+    CUDA, C++, OpenGL
+  
+
+
+ •
+  
+    
+    Undergraduate Thesis
+  
+
+
+        
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="../images/projects/ray-tracing-gpu/ray-tracing-gpu@4x-8.png" alt="Imgur" /></p>
+
+<p>I implemented ray tracing entirely on a GPU based on Whitted’s algorithm, with the goal of rendering fully ray-traced scenes in real-time settings through a user interface. This project served as my undergraduate thesis. The implementation covers ray tracing for perfect light reflection and refraction, as outlined in the <a href="https://www.cs.drexel.edu/~deb39/Classes/Papers/p343-whitted.pdf">original paper</a>. The algorithm is capable of reproducing light effects such as mirror reflection and diffuse reflection. Additionally, I implemented five Physically Based Rendering (PBR) materials using a design pattern based on the <a href="https://pbrt.org/">PBRT book</a>. The implementation also includes linear transformations, scene loading, and real-time configuration. Users can explore and experiment with scenes, adjusting settings such as the number of bounces, light, and camera position.</p>
+
+<!-- more -->
+
+<h2>Motivation</h2>
+<p>This project idea was born as an extension of a previous personal project, which involved a much simpler ray tracing implementation on the CPU. Around the time I was enrolled in the thesis course, I began learning the fundamentals of CUDA, understanding the workings of GPUs, and delving into the basics of rendering theory. I thought that it could be a good idea to apply all that new knowledge in practice by extending my previous project into a more advanced ray tracing implementation, this time on the GPU, and with a more organized codebase (ok, still a long way to go). The objective was to personally assess how scenes with hundreds of triangles could be rendered in just a couple of milliseconds, in contrast to my earlier CPU-based implementation.</p>
+
+<h2>Tools and dependencies</h2>
+<h3>Programming languages</h3>
+<ul>
+  <li>C++</li>
+  <li>CUDA-C++</li>
+</ul>
+
+<h3>Dependencies</h3>
+<ul>
+  <li><a href="https://www.glfw.org/">GLFW</a>: Window and input management (keyboard and mouse)</li>
+  <li><a href="https://github.com/ocornut/imgui">Dear ImGui</a>: Graphical interface</li>
+  <li><a href="https://glad.dav1d.de/">Glad</a>: Loading OpenGL functions</li>
+  <li>OpenGL: Displaying the rendered image continuously</li>
+  <li><a href="https://github.com/tinyobjloader/tinyobjloader">tinyobjloader</a>: OBJ loader and triangulation</li>
+</ul>
+
+<h2>Features</h2>
+<p>These are the functionalities I have implemented in my application. Each subtitle briefly explains the concept and outlines the implementation:</p>
+
+<h3>Support for Wavefront .OBJ files and .MTL files</h3>
+<p>My raytracer supports the loading of .OBJ files, extracting vertex positions and vertex normals. Currently, texture mapping is not implemented, and therefore, texture coordinates loading is not supported yet. Additionally, it reads .MTL files, though in a customized format. I modified the illumination model <strong><em>illum</em></strong> parameter; so now the parameter ranges from 0 to 3. The models are as follows:</p>
+
+<ul>
+  <li>0: Mirror</li>
+  <li>1: Glass</li>
+  <li>2: Matte</li>
+  <li>3: Plastic</li>
+</ul>
+
+<p>The application also supports the rendering of spheres. These primitives were initially used in the early stages of development to test all functionalities before implementing the Triangle primitive.</p>
+
+<h3>PBR Materials</h3>
+<p>The materials I implemented are listed in the table below, which also includes the BxDFs that compose each material. BxDF stands for a general form of the terms BRDF (Bidirectional Reflection Distribution Function) for specular reflection and BTDF (Bidirectional Transmission Distribution Function) for specular refraction. The implementation of this concept was based on Chapter 8 of the PBRT book. I followed the design pattern for the implementation of the BxDF base class, from which each specific BxDF was derived. In total, five BxDFs were implemented, and the materials are composed of one or more of these BxDFs. Specular reflection and Refraction implement the fresnel factor in conjunction with the Snell’s law for a more realistic output.</p>
+
+<p>BxDFs:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>BxDF</th>
+      <th>Class name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lambertian*</td>
+      <td><em>LambertianReflection</em></td>
+    </tr>
+    <tr>
+      <td>Phong*</td>
+      <td><em>PhongReflection</em></td>
+    </tr>
+    <tr>
+      <td>Blinn-Phong*</td>
+      <td><em>BlinnPhongReflection</em></td>
+    </tr>
+    <tr>
+      <td>Specular Reflection</td>
+      <td><em>SpecularReflection</em></td>
+    </tr>
+    <tr>
+      <td>Specular transmission/refraction</td>
+      <td><em>SpecularRefraction</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>*Requires a normalization factor, these concepts were taken from <a href="https://users.tricity.wsu.edu/~bobl/personal/mypubs/1993_plausible.pdf">[1]</a>, <a href="http://www.thetenthplanet.de/archives/255">[2]</a>, <a href="https://www.cs.princeton.edu/courses/archive/fall03/cs526/papers/lafortune94.pdf">[3]</a>.</p>
+
+<p>Materials:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Material</th>
+      <th>Class name</th>
+      <th>BxDF(s) composition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Matte</td>
+      <td><em>MatteMaterial</em></td>
+      <td>Lambertian</td>
+    </tr>
+    <tr>
+      <td>Glass</td>
+      <td><em>GlassMaterial</em></td>
+      <td>Specular Reflection &amp; Refraction</td>
+    </tr>
+    <tr>
+      <td>Plastic</td>
+      <td><em>PlasticMaterial</em></td>
+      <td>Lambertian &amp; Phong/Blinn-Phong</td>
+    </tr>
+    <tr>
+      <td>Mirror</td>
+      <td><em>MirrorMaterial</em></td>
+      <td>Specular Reflection</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Results</h2>
+<p>Some quantifiable results are listed in the table below. I used various variations of the Cornell Box scene for testing because the bounces of light are more noticeable in these scenes. Moreover, the Utah Teapot and the Stanford Bunny were also rendered. We noticed that the rendering resolution and the number of bounces greatly affect the rendering time. Additionally, my application renders objects with up to ~5k triangles while still maintaining an ‘interactive’ framerate, although at low resolutions. I made minor tweaks to the program, but the issue I found to have the most significant impact is the process of ‘naive’ intersection. This problem is better addressed using a spatial acceleration structure, which is part of a future step.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scene name</th>
+      <th>Resolution</th>
+      <th>FPS</th>
+      <th>Miliseconds (ms)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CornellBox-Original</td>
+      <td>1024x576</td>
+      <td>80.3</td>
+      <td>12.45</td>
+    </tr>
+    <tr>
+      <td>CornellBox-Sphere</td>
+      <td>1024x576</td>
+      <td>3.1</td>
+      <td>321.101</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  </div>
+
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy; 2024 Paolo Maldonado 
+<!-- - Subscribe via <a href="https://paolomaldonado.github.io/feed.xml">RSS</a> -->
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

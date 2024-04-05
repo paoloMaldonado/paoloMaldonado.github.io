@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Projects</title>
+  <meta name="description" content="Blog and Portfolio">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://paolomaldonado.github.io/projects/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Paolo Maldonado&#39;s blog" href="https://paolomaldonado.github.io/feed.xml">
+
+  
+
+  
+  <meta property="og:title" content="Projects">
+  <meta property="og:site_name" content="Paolo Maldonado&#39;s blog">
+  <meta property="og:url" content="https://paolomaldonado.github.io/projects/">
+  <meta property="og:description" content="Blog and Portfolio">
+  
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="Projects">
+  <meta name="twitter:description" content="Blog and Portfolio">
+  
+  
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Paolo Maldonado&#39;s blog</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">About</a>
+      
+        
+        <a class="page-link" href="/projects/">Projects</a>
+      
+        
+        <a class="page-link" href="/archives/">Archives</a>
+      
+        
+        <a class="page-link" href="https://github.com/paoloMaldonado">GitHub</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="projects_list">
+
+  
+
+  
+
+  <ul class="post-list">
+    
+      
+      
+
+      <li>
+        <header class="post-header">
+          <h1 class="post-title">
+            
+              <a class="post-link" href="/projects/qt-oscilloscope.html">A custom Oscilloscope with Qt</a>
+            
+          </h1>
+
+          <p class="post-meta">
+            <!-- Mar 23, 2024 to include date -->
+               
+              <a href="https://github.com/paoloMaldonado/qwt_transmin_solved">Code</a> • 
+            
+            
+            
+              
+  
+    
+    Qt, C++
+  
+
+
+ •
+  
+    
+    Personal project
+  
+
+
+            
+          </p>
+        </header>
+
+        <div class="post-content">
+          <p><img src="../images/projects/qt_oscilloscope/qt_oscilloscope_screenshot.png" alt="Imgur" /></p>
+
+<p>This project was based on the Qt oscilloscope <a href="https://doc.qt.io/qt-6/qtcharts-qmloscilloscope-example.html">example</a>, but a slightly different version (much older, I guess) which is available <a href="https://github.com/ex/qwt">here</a>. Starting with that template, I gradually added new functionalities. These included a ‘Stop’ button, a ‘Change Color’ button to modify the curve color, a checkbox labeled ‘Legend’ to display amplitude and frequency within the plot, a wheel for vertical displacement of the curve, and a ‘Foto actual’ button to take a screenshot and capture the current state of the plot. All of these features were integrated into a new window layout. Additionally, the project allows exporting the screenshot through a ‘Save image’ button. This project was part of a programming exam, and I decided to put it here because it was interesting to play with UI programming and the Qt library for the first time. Everything was made with C++ and Qt 5 (If it sounds old to you, the self-containing template came with that version). Despite using an older version, I learned and experimented from the Qt 6 documentation.</p>
+
+
+        </div>
+        
+          <p class="post-continue">
+            <a href="/projects/qt-oscilloscope.html">Read more &rarr;</a>
+          </p>
+        
+      </li>
+    
+      
+      
+
+      <li>
+        <header class="post-header">
+          <h1 class="post-title">
+            
+              <a class="post-link" href="/projects/whitted-ray-tracing-gpu.html">Whitted ray tracing using GPU acceleration</a>
+            
+          </h1>
+
+          <p class="post-meta">
+            <!-- Dec 14, 2023 to include date -->
+               
+              <a href="https://github.com/paoloMaldonado/RayTracing_gpu">Code</a> • 
+            
+            
+            
+              
+  
+    
+    CUDA, C++, OpenGL
+  
+
+
+ •
+  
+    
+    Undergraduate Thesis
+  
+
+
+            
+          </p>
+        </header>
+
+        <div class="post-content">
+          <p><img src="../images/projects/ray-tracing-gpu/ray-tracing-gpu@4x-8.png" alt="Imgur" /></p>
+
+<p>I implemented ray tracing entirely on a GPU based on Whitted’s algorithm, with the goal of rendering fully ray-traced scenes in real-time settings through a user interface. This project served as my undergraduate thesis. The implementation covers ray tracing for perfect light reflection and refraction, as outlined in the <a href="https://www.cs.drexel.edu/~deb39/Classes/Papers/p343-whitted.pdf">original paper</a>. The algorithm is capable of reproducing light effects such as mirror reflection and diffuse reflection. Additionally, I implemented five Physically Based Rendering (PBR) materials using a design pattern based on the <a href="https://pbrt.org/">PBRT book</a>. The implementation also includes linear transformations, scene loading, and real-time configuration. Users can explore and experiment with scenes, adjusting settings such as the number of bounces, light, and camera position.</p>
+
+
+        </div>
+        
+          <p class="post-continue">
+            <a href="/projects/whitted-ray-tracing-gpu.html">Read more &rarr;</a>
+          </p>
+        
+      </li>
+    
+      
+      
+
+      <li>
+        <header class="post-header">
+          <h1 class="post-title">
+            
+              <a class="post-link" href="/projects/ray-marching-shader.html">Reflections with ray marching</a>
+            
+          </h1>
+
+          <p class="post-meta">
+            <!-- Dec 1, 2022 to include date -->
+               
+              <a href="https://www.shadertoy.com/view/DdfSWB">Code</a> • 
+            
+            
+            
+              
+  
+    
+    GLSL, shadertoy
+  
+
+
+ •
+  
+    
+    Personal project
+  
+
+
+            
+          </p>
+        </header>
+
+        <div class="post-content">
+          <p><img src="../images/projects/ray_marching_shader/raymarching.png" alt="Imgur" /></p>
+
+<p>A Cornell Box made entirely with GLSL (The OpenGL Shading Language) using the raymarching algorithm, specifically, the sphere tracing technique. The Cornell Box is a scene used for testing the quality of renderers, now it is also part of the graphics lore. This is a Glossy-recreated Cornell Box rendered entirely with raymarching. The surfaces are assumed to be glossy (perfectly reflective like a mirror) and the reflections are set up for 2 ray bounces by default. Also, the bounces can be modified in the code but be aware that more bounces mean less perfomance (fps). I wanted to create this with the objective of imitating the effects that a regular raytracing does but with raymarching. Currently, the program runs in realtime (&gt;30fps) in a 800x450 resolution, try going fullscreen <a href="https://www.shadertoy.com/view/DdfSWB">here</a>!.</p>
+
+<p>Disclaimer: This is not how a rendering algorithm should work, specially offline renderers that use ray tracing/path tracing but this was a fun project to do and I guess there still exists room for more optimization.</p>
+
+        </div>
+        
+      </li>
+    
+  </ul>
+
+  
+
+
+</div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy; 2024 Paolo Maldonado 
+<!-- - Subscribe via <a href="https://paolomaldonado.github.io/feed.xml">RSS</a> -->
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
