@@ -6,7 +6,7 @@ permalink: /about/
 
 Hello!
 
-<img align="right" src="https://imgur.com/3vG9kze">
+<img align="right" src="../images/projects/myself.png">
 
 I am Paolo Maldonado, an enthusiastic programmer and math geek with a fervent passion for computer graphics, rendering, and video games. I'm a self-taught person who likes to delve into the nitty-gritty of the things I study. "Why is this actually doing on a deeper level?" "Why does this other thing work like that?" are phrases I usually say out loud in my day-to-day (actually, I say them aloud in my head). I graduated from Systems Engineering, but my interests extend to anything related to low-level code and game engines. That's why I love C++!
 
